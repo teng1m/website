@@ -1,0 +1,38 @@
+/* Frutiger Aero Glossy Orb CSS */
+.glossy-orb {
+    --hue: 245;
+    --sat: 0.15;
+    --gloss: 0.7;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+
+    /* Sphere gradient with OKLCH */
+    background: radial-gradient(
+        circle at 35% 35%,
+        rgba(255, 255, 255, var(--gloss)),
+        oklch(65% var(--sat) var(--hue)) 50%,
+        oklch(35% var(--sat) var(--hue)) 100%
+    );
+
+    /* Depth shadows */
+    box-shadow:
+        inset 0 -4px 8px rgba(0, 0, 0, 0.3),
+        0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Specular highlight */
+.glossy-orb::after {
+    content: "";
+    position: absolute;
+    top: 8%;
+    left: 18%;
+    width: 45%;
+    height: 35%;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 50%;
+    transform: rotate(-20deg);
+    pointer-events: none;
+}

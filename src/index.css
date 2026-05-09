@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('/SEGOEUI.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --color-green:        #3cda56;
+  --color-green-mid:    #32912a;
+  --color-green-dark:   #0b3112;
+  --color-green-bright: #57fa6f;
+  --color-green-giga:   #00ff00;
+  --color-body:         #dadada;
+  --color-dim:          #aaa;
+  --color-muted:        #666;
+  --color-border:       #4b4b4b;
+  --color-dot-red:      #ff5f57;
+  --color-dot-yellow:   #ffbd2e;
+  --color-dot-green:    #28c840;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scrollbar-color: rgba(35, 105, 47, 0.8) rgba(31, 31, 31, 0.65);
+  scrollbar-width: thin;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: center / cover no-repeat fixed #303030;
+  cursor: url('/cursors/normal.cur'), auto;
+}
+
+a, button { cursor: url('/cursors/link.cur'), pointer; }
+
+::selection { background: #148d28; color: #fff; }
+
+/* ── glossy orb (timeline dots + icon orbs) ── */
+.orb {
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.7), oklch(62% .20 145) 50%, oklch(32% .16 140) 100%);
+  box-shadow: inset 0 -3px 6px rgba(0,0,0,.35), 0 4px 10px rgba(0,0,0,.4);
+}
+.orb::after {
+  content: '';
+  position: absolute;
+  top: 8%; left: 18%;
+  width: 45%; height: 35%;
+  background: radial-gradient(ellipse, rgba(255,255,255,.8), transparent);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}

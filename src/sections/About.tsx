@@ -4,7 +4,7 @@ export default function About() {
     return (
         <div className="flex flex-col gap-5">
             <div className="flex gap-5 items-start">
-                <div
+                {/* <div
                     className="shrink-0 flex items-center justify-center rounded-full text-xl font-bold text-white"
                     style={{
                         width: 72,
@@ -16,16 +16,16 @@ export default function About() {
                     }}
                 >
                     {site.initials}
-                </div>
+                </div> */}
 
                 <div className="flex flex-col gap-2">
                     <div>
                         <h1 className="m-0 text-xl font-semibold text-white [text-shadow:0_0_3px_#000]">
-                            {site.name}
+                            Kienan Ma
                         </h1>
                         <p className="m-0 text-sm text-green">{site.title}</p>
                     </div>
-                    <p className="m-0 text-sm leading-relaxed text-body">{site.bio}</p>
+                    <p className="m-0 text-sm leading-relaxed text-body">Hey there, I'm Kienan. Welcome to my personal site!</p>
                 </div>
             </div>
         </div>

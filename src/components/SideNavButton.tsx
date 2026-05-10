@@ -24,7 +24,7 @@ export default function SideNavButton({
             target={external ? "_blank" : undefined}
             rel={external ? "noopener noreferrer" : undefined}
             onClick={onClick}
-            className={`bg-linear-to-b w-full flex items-center gap-1 px-1.5 py-1 rounded-md border border-gray-900 [text-shadow:0_0_3px_#000] no-underline transition-transform duration-15 hover:scale-[1.03] hover:underline bg-size-[100%_calc(100%+3px)] ${gloss} ${
+            className={`bg-linear-to-b w-full flex items-center gap-1 px-2 py-1 rounded-sm border border-gray-900 [text-shadow:0_0_3px_#000] no-underline transition-transform duration-15 hover:scale-[1.03] hover:underline bg-size-[100%_calc(100%+3px)] ${gloss} ${
                 active
                     ? `from-green-dark/30 via-green-900/35 via-36% to-green/65 text-green-bright scale-[1.03]`
                     : `from-white/25 via-neutral-500/15 via-60% to-neutral-900/30 text-gray-200 hover:to-gray-500`

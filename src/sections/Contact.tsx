@@ -7,9 +7,9 @@ export default function Contact() {
     return (
         <div className="flex flex-col gap-6">
             <div>
-                <h2 className="m-0 text-base font-semibold text-white [text-shadow:0_0_3px_#000]">
+                <h1>
                     Contact
-                </h2>
+                </h1>
                 <p className="mt-1 mb-0 text-sm text-dim">Best way to reach me is email.</p>
             </div>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import site from "./data/site";
 import SideNavButton from "./components/SideNavButton";
 // import IconOrb from "./components/IconOrb";
@@ -7,28 +7,10 @@ import Experience from "./sections/Experience";
 // import Contact from "./sections/Contact";
 import UnderConstruction from "./sections/UnderConstruction";
 
-const VALID = ["/about", "/experience", "/contact"];
-
-const resolve = (p: string) => {
-    if (VALID.includes(p)) return p;
-    history.replaceState(null, "", "/about");
-    return "/about";
-};
+type Section = "about" | "experience" | "contact";
 
 export default function App() {
-    const [path, setPath] = useState(() => resolve(window.location.pathname));
-
-    useEffect(() => {
-        const onPop = () => setPath(resolve(window.location.pathname));
-        window.addEventListener("popstate", onPop);
-        return () => window.removeEventListener("popstate", onPop);
-    }, []);
-
-    const nav = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
-        e.preventDefault();
-        history.pushState(null, "", to);
-        setPath(to);
-    };
+    const [section, setSection] = useState<Section>("about");
 
     return (
         <>
@@ -69,17 +51,15 @@ export default function App() {
                     {/* sidebar */}
                     <nav className="w-40 shrink bg-[rgba(8,8,8,.45)] border-r border-border py-2 px-1.5 flex flex-col gap-2">
                         <SideNavButton
-                            href="/about"
-                            active={path === "/about"}
-                            onClick={(e) => nav(e, "/about")}
+                            active={section === "about"}
+                            onClick={() => setSection("about")}
                             icon={<img src="/about.ico" className="w-6" />}
                         >
                             About
                         </SideNavButton>
                         <SideNavButton
-                            href="/experience"
-                            active={path === "/experience"}
-                            onClick={(e) => nav(e, "/experience")}
+                            active={section === "experience"}
+                            onClick={() => setSection("experience")}
                             icon={<img src="/experience.ico" className="w-6" />}
                         >
                             Experience
@@ -119,9 +99,8 @@ export default function App() {
                             LinkedIn
                         </SideNavButton>
                         <SideNavButton
-                            href="/contact"
-                            active={path === "/contact"}
-                            onClick={(e) => nav(e, "/contact")}
+                            active={section === "contact"}
+                            onClick={() => setSection("contact")}
                             icon={<img src="/mail.ico" className="size-6" />}
                         >
                             Contact
@@ -129,9 +108,9 @@ export default function App() {
                     </nav>
                     {/* content */}
                     <div className="flex-1 overflow-y-auto m-3 pr-2">
-                        {path === "/experience" && <Experience />}
-                        {path === "/contact" && <UnderConstruction />}
-                        {path !== "/experience" && path !== "/contact" && <UnderConstruction />}
+                        {section === "experience" && <Experience />}
+                        {section === "contact" && <UnderConstruction />}
+                        {section === "about" && <UnderConstruction />}
                     </div>
                 </div>
             </div>

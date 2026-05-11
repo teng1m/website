@@ -1,5 +1,5 @@
 interface Props {
-    href: string;
+    href?: string;
     children: React.ReactNode;
     active?: boolean;
     external?: boolean;

@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 
-document.body.style.backgroundImage = `url('/backgrounds/asadal_stock_65.jpg')`;
+document.body.style.backgroundImage = `url('/backgrounds/w2.jpg')`;
 
 const navSound = new Audio("/nav.wav");
 document.addEventListener("click", (e) => {

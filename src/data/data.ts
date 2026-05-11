@@ -16,8 +16,6 @@ const data = {
         resume: "/resume.pdf",
     },
 
-    hitsSlug: "yourname.github.io",
-
     experience: [
         {
             logo: "/companies/biorender.svg",

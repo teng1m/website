@@ -1,12 +1,12 @@
 import type { ExperienceItem } from "../types";
 
-const site = {
+const data = {
     name: "Kienan Ma",
     firstName: "Kienan",
     lastName: "Ma",
     initials: "KM",
     title: "Software Engineer",
-    bio: "Hi! I'm Kienan. I'm a full-stack software engineer who enjoys building clean, user-focused products. I've previously worked across the stack at startups and product-focused companies. Outside of work, I'm interested in computer hardware, music production, and retro UI design. I am always looking to get involved with new experiences and opportunities. Feel free to reach out, my info is in the left sidebar.",
+    bio: "Hi! I'm Kienan. I'm a full-stack software engineer who enjoys building clean, user-focused products. I've previously worked across the stack at startups and product-focused companies. Outside of work, I'm interested in computer hardware, music production, and retro UI design. I am always looking to get involved with new experiences and opportunities. Feel free to reach out via the Contact page.",
 
     email: { user: "kienanma", domain: "outlook.com" },
 
@@ -44,7 +44,7 @@ const site = {
             company: "Scispot (YC21)",
             role: "Software Engineer Intern",
             period: "May 2024 - Aug 2024",
-            description: "",
+            description: "Redesigned LIMS suite.",
             skills: ["JavaScript", "React", "Tailwind"],
         },
         {
@@ -68,4 +68,4 @@ const site = {
     ] satisfies ExperienceItem[],
 };
 
-export default site;
+export default data;

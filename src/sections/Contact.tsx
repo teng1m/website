@@ -1,32 +1,29 @@
-import { Mail } from "lucide-react";
-import site from "../data/site";
+import data from "../data/data";
 
 export default function Contact() {
-    const email = `${site.email.user}@${site.email.domain}`;
-
     return (
         <div className="flex flex-col gap-6">
             <div>
-                <h1>
-                    Contact
-                </h1>
-                <p className="mt-1 mb-0 text-sm text-dim">Best way to reach me is email.</p>
+                <h1>Contact</h1>
+                <p>
+                    The best way to reach me is by email. I'm always open to new opportunities,
+                    collaborations, or just a good conversation.
+                </p>
             </div>
-
-            <div className="flex items-center gap-3 rounded-[6px] border border-border bg-[rgba(0,0,0,.3)] px-4 py-3">
-                <Mail size={15} className="text-green shrink-0" />
-                <div className="flex items-baseline font-mono text-sm select-all text-body">
-                    <span>{site.email.user}</span>
+            <a
+                href="#"
+                onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = `mailto:${data.email.user}@${data.email.domain}`;
+                }}
+                className="glass-borders p-1 block hover:opacity-80 transition-opacity"
+            >
+                <div className="flex items-baseline font-mono text-sm select-all text-body flex-row p-3 bg-black/50 border-neutral-500 border">
+                    <span>{data.email.user}</span>
                     <span className="text-muted">@</span>
-                    <span>{site.email.domain}</span>
+                    <span>{data.email.domain}</span>
                 </div>
-                <a
-                    href={`mailto:${email}`}
-                    className="ml-auto aero-btn rounded-[4px] px-3 py-1 text-xs no-underline"
-                >
-                    Send mail
-                </a>
-            </div>
+            </a>
         </div>
     );
 }

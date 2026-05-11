@@ -1,11 +1,11 @@
 import { useState } from "react";
-import site from "./data/site";
+import data from "./data/data";
 import SideNavButton from "./components/SideNavButton";
 // import IconOrb from "./components/IconOrb";
 import Experience from "./sections/Experience";
-// import Contact from "./sections/Contact";
 import UnderConstruction from "./sections/UnderConstruction";
 import About from "./sections/About";
+import Contact from "./sections/Contact";
 
 type Section = "about" | "experience" | "contact" | "resume";
 
@@ -72,7 +72,7 @@ export default function App() {
                             Resume
                         </SideNavButton>
                         <SideNavButton
-                            href={site.links.github}
+                            href={data.links.github}
                             external
                             icon={
                                 <div className="relative overflow-hidden rounded-full size-5 mr-1">
@@ -87,7 +87,7 @@ export default function App() {
                             GitHub
                         </SideNavButton>
                         <SideNavButton
-                            href={site.links.linkedin}
+                            href={data.links.linkedin}
                             external
                             icon={
                                 <div className="relative overflow-hidden rounded-sm size-5 mr-1">
@@ -110,7 +110,7 @@ export default function App() {
                     <div className="flex-1 overflow-y-auto m-3 pr-2">
                         {section === "about" && <About />}
                         {section === "experience" && <Experience />}
-                        {section === "contact" && <UnderConstruction />}
+                        {section === "contact" && <Contact />}
                         {section === "resume" && <UnderConstruction />}
                     </div>
                 </div>

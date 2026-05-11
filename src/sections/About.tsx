@@ -1,4 +1,4 @@
-import site from "../data/site";
+import data from "../data/data";
 
 export default function About() {
     return (
@@ -18,11 +18,11 @@ export default function About() {
                             textShadow: "0 0 4px #000",
                         }}
                     >
-                        {site.initials}
+                        {data.initials}
                     </div>
                     <div className="flex flex-col gap-4 p-3 bg-black/50 border-neutral-500 border">
                         <h1>Kienan Ma</h1>
-                        <p className="text-body">{site.bio}</p>
+                        <p className="text-body">{data.bio}</p>
                     </div>
                 </div>
             </div>

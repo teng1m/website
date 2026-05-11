@@ -4,8 +4,8 @@ export default function About() {
     return (
         <div className="flex flex-col h-full w-full gap-3">
             <h1>About</h1>
-            <div className="flex-row flex h-full w-full">
-                <div className="glass-borders h-full f-full p-3 flex-row flex gap-4">
+            <div className="flex-row flex w-full">
+                <div className="glass-borders f-full p-3 flex-row flex gap-4">
                     <div
                         className="shrink-0 flex items-center justify-center rounded-full text-xl font-bold text-white"
                         style={{
@@ -20,7 +20,7 @@ export default function About() {
                     >
                         {site.initials}
                     </div>
-                    <div className="flex flex-col gap-4 p-3 bg-black/50 border-neutral-500 border h-m">
+                    <div className="flex flex-col gap-4 p-3 bg-black/50 border-neutral-500 border">
                         <h1>Kienan Ma</h1>
                         <p className="text-body">{site.bio}</p>
                     </div>

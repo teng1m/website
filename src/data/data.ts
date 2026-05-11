@@ -60,7 +60,8 @@ const data = {
             company: "BlueRover",
             role: "Software Engineer Intern",
             period: "May 2022 - Aug 2022",
-            description: "Worked on manufacturing execution systems software.",
+            description:
+                "Built features for IoT dashboards monitoring environmental conditions for food safety.",
             skills: ["JavaScript", "React", "MySQL"],
         },
     ] satisfies ExperienceItem[],

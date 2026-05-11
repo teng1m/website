@@ -27,7 +27,16 @@ const site = {
             period: "Jan 2025 – Apr 2025",
             description:
                 "Worked on the enterprise team to support creating scientific illustrations for organizations like Pfizer.",
-            skills: ["React", "TypeScript", "Node.js"],
+            skills: [
+                "React",
+                "TypeScript",
+                "Node.js",
+                "Redux.js",
+                "Cypress",
+                "MongoDB",
+                "Jest",
+                "Auth0",
+            ],
         },
         {
             logo: "/companies/scispot.png",

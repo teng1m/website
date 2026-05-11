@@ -32,7 +32,7 @@ export default function ExperienceEntry({
                 <div className="flex flex-col w-full gap-1.5">
                     <div className="flex flex-row justify-between w-full">
                         <h1>{company}</h1>
-                        {/* <span className="text-sm text-muted">{period}</span> */}
+                        <span className="text-sm text-neutral-400 italic">{period}</span>
                     </div>
                     <p className="text-sm text-dim">{role}</p>
                     <p className="text-sm">{description}</p>

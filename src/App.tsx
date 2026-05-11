@@ -7,7 +7,7 @@ import Experience from "./sections/Experience";
 import UnderConstruction from "./sections/UnderConstruction";
 import About from "./sections/About";
 
-type Section = "about" | "experience" | "contact";
+type Section = "about" | "experience" | "contact" | "resume";
 
 export default function App() {
     const [section, setSection] = useState<Section>("about");
@@ -64,13 +64,13 @@ export default function App() {
                         >
                             Experience
                         </SideNavButton>
-                        {/* <SideNavButton
-                        href={site.links.resume}
-                        external
-                        icon={<img src="/resume.ico" className="size-6" />}
-                    >
-                        Resume
-                    </SideNavButton> */}
+                        <SideNavButton
+                            active={section === "resume"}
+                            onClick={() => setSection("resume")}
+                            icon={<img src="/resume.ico" className="size-6" />}
+                        >
+                            Resume
+                        </SideNavButton>
                         <SideNavButton
                             href={site.links.github}
                             external
@@ -111,6 +111,7 @@ export default function App() {
                         {section === "about" && <About />}
                         {section === "experience" && <Experience />}
                         {section === "contact" && <UnderConstruction />}
+                        {section === "resume" && <UnderConstruction />}
                     </div>
                 </div>
             </div>

@@ -11,8 +11,8 @@ const site = {
     email: { user: "address", domain: "example.com" },
 
     links: {
-        github: "https://github.com/github",
-        linkedin: "https://linkedin.com/in/linkedin",
+        github: "https://github.com/teng1m",
+        linkedin: "https://linkedin.com/in/kienanma",
         resume: "/resume.pdf",
     },
 

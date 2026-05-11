@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import site from "./data/site";
 import SideNavButton from "./components/SideNavButton";
-import IconOrb from "./components/IconOrb";
-import About from "./sections/About";
+// import IconOrb from "./components/IconOrb";
+// import About from "./sections/About";
 import Experience from "./sections/Experience";
-import Contact from "./sections/Contact";
+// import Contact from "./sections/Contact";
 import UnderConstruction from "./sections/UnderConstruction";
 
 const VALID = ["/about", "/experience", "/contact"];
@@ -70,13 +70,13 @@ export default function App() {
                     >
                         Experience
                     </SideNavButton>
-                    <SideNavButton
+                    {/* <SideNavButton
                         href={site.links.resume}
                         external
                         icon={<img src="/resume.ico" className="size-6" />}
                     >
                         Resume
-                    </SideNavButton>
+                    </SideNavButton> */}
                     <SideNavButton
                         href={site.links.github}
                         external

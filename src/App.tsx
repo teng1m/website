@@ -2,10 +2,10 @@ import { useState } from "react";
 import site from "./data/site";
 import SideNavButton from "./components/SideNavButton";
 // import IconOrb from "./components/IconOrb";
-// import About from "./sections/About";
 import Experience from "./sections/Experience";
 // import Contact from "./sections/Contact";
 import UnderConstruction from "./sections/UnderConstruction";
+import About from "./sections/About";
 
 type Section = "about" | "experience" | "contact";
 
@@ -108,9 +108,9 @@ export default function App() {
                     </nav>
                     {/* content */}
                     <div className="flex-1 overflow-y-auto m-3 pr-2">
+                        {section === "about" && <About />}
                         {section === "experience" && <Experience />}
                         {section === "contact" && <UnderConstruction />}
-                        {section === "about" && <UnderConstruction />}
                     </div>
                 </div>
             </div>

@@ -1,14 +1,14 @@
 import type { ExperienceItem } from "../types";
 
 const site = {
-    name: "First",
-    firstName: "FirstName",
-    lastName: "LastName",
-    initials: "FL",
+    name: "Kienan Ma",
+    firstName: "Kienan",
+    lastName: "Ma",
+    initials: "KM",
     title: "Software Engineer",
-    bio: "Hello",
+    bio: "Hi! I'm Kienan. I'm a full-stack software engineer who enjoys building clean, user-focused products. I've previously worked across the stack at startups and product-focused companies. Outside of work, I'm interested in computer hardware, music production, and retro UI design. I am always looking to get involved with new experiences and opportunities. Feel free to reach out, my info is in the left sidebar.",
 
-    email: { user: "address", domain: "example.com" },
+    email: { user: "kienanma", domain: "outlook.com" },
 
     links: {
         github: "https://github.com/teng1m",

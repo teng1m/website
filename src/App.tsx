@@ -107,13 +107,11 @@ export default function App() {
                         </SideNavButton>
                     </nav>
                     {/* content */}
-                    <div className="flex-1 overflow-y-auto overflow-x-auto m-3 pr-2 min-w-0">
-                        <div className="min-w-80">
-                            {section === "about" && <About />}
-                            {section === "experience" && <Experience />}
-                            {section === "contact" && <Contact />}
-                            {section === "resume" && <UnderConstruction />}
-                        </div>
+                    <div className="flex-1 overflow-y-auto overflow-x-auto m-3 pr-2 min-w-80">
+                        {section === "about" && <About />}
+                        {section === "experience" && <Experience />}
+                        {section === "contact" && <Contact />}
+                        {section === "resume" && <UnderConstruction />}
                     </div>
                 </div>
             </div>

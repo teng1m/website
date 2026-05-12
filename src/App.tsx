@@ -43,7 +43,7 @@ export default function App() {
                             }}
                         />
                     </div>
-                    <h1 className="text-2xl">My Website</h1>
+                    <h1 className="text-2xl">Kienan</h1>
                 </div>
 
                 {/* body */}

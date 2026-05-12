@@ -43,23 +43,25 @@ export default function Contact() {
                     onClick={handleCopy}
                     className="glass-borders p-1 block hover:opacity-80 transition-opacity w-full text-left cursor-pointer"
                 >
-                    <div className="flex items-baseline font-mono text-sm text-body flex-row p-3 bg-black/50 border-neutral-500 border">
+                    <div className="flex items-center font-mono text-sm text-body flex-row py-2 px-3 bg-black/50 border-neutral-500 border">
                         <span>{data.email.user}</span>
                         <span className="text-muted">@</span>
                         <span>{data.email.domain}</span>
+                        <img src="/copy.ico" className="size-6 ml-auto"/>
                     </div>
                 </button>
             </div>
-            {toast && createPortal(
-                <div
-                    key={toast.id}
-                    className={`fixed z-50 pointer-events-none select-none px-2 py-0.5 text-xs font-mono bg-[#ece9d8] text-[#5a5248] border border-[#a09070] -translate-x-1/2 transition-all duration-1000 ease-in ${toast.floating ? "opacity-0 -translate-y-12" : "opacity-100 -translate-y-8"}`}
-                    style={{ left: toast.x, top: toast.y }}
-                >
-                    Copied!
-                </div>,
-                document.body
-            )}
+            {toast &&
+                createPortal(
+                    <div
+                        key={toast.id}
+                        className={`fixed z-50 pointer-events-none select-none px-2 py-0.5 text-xs font-mono bg-[#ece9d8] text-[#5a5248] border border-[#a09070] -translate-x-1/2 transition-all duration-1000 ease-in ${toast.floating ? "opacity-0 -translate-y-12" : "opacity-100 -translate-y-8"}`}
+                        style={{ left: toast.x, top: toast.y }}
+                    >
+                        Copied!
+                    </div>,
+                    document.body,
+                )}
         </>
     );
 }

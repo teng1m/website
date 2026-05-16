@@ -6,9 +6,9 @@ const data = {
     lastName: "Ma",
     initials: "KM",
     title: "Software Engineer",
-    bio: "Hi! I'm Kienan. I'm a full-stack software engineer who enjoys building clean, user-focused products. I've previously worked across the stack at startups and product-focused companies. Outside of work, I'm interested in computer hardware, music production, and retro UI design. I am always looking to get involved with new experiences and opportunities. Feel free to reach out via the Contact page.",
+    bio: "Hi! I'm Kienan. I'm a full-stack software engineer who enjoys building clean, user-focused products. I've previously worked across the stack at startups and product-focused companies. Outside of work, I'm interested in computer hardware, music production, self-hosting, and UI design. I am always looking to get involved with new experiences and opportunities. Feel free to reach out via the Contact page.",
 
-    email: { user: "kienanma", domain: "outlook.com" },
+    email: { user: "kienan1m", domain: "gmail.com" },
 
     links: {
         github: "https://github.com/teng1m",

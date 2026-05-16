@@ -13,7 +13,7 @@ const data = {
     links: {
         github: "https://github.com/teng1m",
         linkedin: "https://linkedin.com/in/kienanma",
-        resume: "/resume.pdf",
+        resume: "/Kienan_Ma_resume.pdf",
     },
 
     experience: [

@@ -3,7 +3,7 @@ import data from "./data/data";
 import SideNavButton from "./components/SideNavButton";
 // import IconOrb from "./components/IconOrb";
 import Experience from "./sections/Experience";
-import UnderConstruction from "./sections/UnderConstruction";
+import Resume from "./sections/Resume";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 
@@ -107,11 +107,11 @@ export default function App() {
                         </SideNavButton>
                     </nav>
                     {/* content */}
-                    <div className="flex-1 overflow-y-auto overflow-x-auto m-3 pr-2 min-w-80">
+                    <div className={`flex-1 overflow-x-auto m-3 pr-2 min-w-80 ${section === "resume" ? "overflow-hidden" : "overflow-y-auto"}`}>
                         {section === "about" && <About />}
                         {section === "experience" && <Experience />}
                         {section === "contact" && <Contact />}
-                        {section === "resume" && <UnderConstruction />}
+                        {section === "resume" && <Resume />}
                     </div>
                 </div>
             </div>

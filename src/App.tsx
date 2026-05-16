@@ -11,6 +11,8 @@ type Section = "about" | "experience" | "contact" | "resume";
 
 export default function App() {
     const [section, setSection] = useState<Section>("about");
+    const [navOpen, setNavOpen] = useState(true);
+
 
     return (
         <>
@@ -28,7 +30,7 @@ export default function App() {
                 </p>
             </div>
             <div
-                className="w-[min(800px,95vw)] h-[min(600px,90vh)] flex flex-col rounded-2xl overflow-hidden border 
+                className="w-[min(800px,95vw)] h-[min(600px,90vh)] flex flex-col rounded-2xl overflow-hidden border
         border-[rgba(236,242,249,.18)] 
         bg-linear-to-b from-[rgba(66,66,66,.4)] to-[rgba(22,22,22,.88)] backdrop-blur-[6px] backdrop-saturate-130 shadow-[2px_2px_12px_rgba(0,0,0,.85),inset_-1px_-1px_0_rgba(255,255,255,.08)] outline-1 outline-[rgba(28,49,39,.4)]"
             >
@@ -44,70 +46,90 @@ export default function App() {
                         />
                     </div>
                     <h1 className="text-2xl">Kienan</h1>
+                    <button
+                        onClick={() => setNavOpen((v) => !v)}
+                        className="md:hidden ml-auto text-white/70 hover:text-white text-sm leading-none"
+                    >
+                        Menu{" "}
+                        <span
+                            className={`inline-block transition-transform duration-200 ${navOpen ? "rotate-180" : "rotate-0"}`}
+                        >
+                            ▶
+                        </span>
+                    </button>
                 </div>
 
                 {/* body */}
-                <div className="flex flex-1 overflow-hidden">
+                <div className="relative flex flex-1 overflow-hidden">
                     {/* sidebar */}
-                    <nav className="w-40 shrink bg-[rgba(8,8,8,.45)] border-r border-border py-2 px-1.5 flex flex-col gap-2">
-                        <SideNavButton
-                            active={section === "about"}
-                            onClick={() => setSection("about")}
-                            icon={<img src="/about.ico" className="w-6" />}
-                        >
-                            About
-                        </SideNavButton>
-                        <SideNavButton
-                            active={section === "experience"}
-                            onClick={() => setSection("experience")}
-                            icon={<img src="/experience.ico" className="w-6" />}
-                        >
-                            Experience
-                        </SideNavButton>
-                        <SideNavButton
-                            active={section === "resume"}
-                            onClick={() => setSection("resume")}
-                            icon={<img src="/resume.ico" className="size-6" />}
-                        >
-                            Resume
-                        </SideNavButton>
-                        <SideNavButton
-                            href={data.links.github}
-                            external
-                            icon={
-                                <div className="relative overflow-hidden rounded-full size-5 mr-1">
-                                    <img
-                                        src="/github.png"
-                                        className="size-5 object-contain brightness-125"
-                                    />
-                                    <div className="absolute inset-x-0 top-0 h-1/2 pointer-events-none bg-linear-to-b from-white/80 to-transparent" />
-                                </div>
-                            }
-                        >
-                            GitHub
-                        </SideNavButton>
-                        <SideNavButton
-                            href={data.links.linkedin}
-                            external
-                            icon={
-                                <div className="relative overflow-hidden rounded-sm size-5 mr-1">
-                                    <img src="/linkedin.png" className="size-5 object-contain" />
-                                    <div className="absolute inset-x-0 top-0 h-1/2 pointer-events-none bg-linear-to-b from-white/80 to-transparent rounded-t-sm" />
-                                </div>
-                            }
-                        >
-                            LinkedIn
-                        </SideNavButton>
-                        <SideNavButton
-                            active={section === "contact"}
-                            onClick={() => setSection("contact")}
-                            icon={<img src="/mail.ico" className="size-6" />}
-                        >
-                            Contact
-                        </SideNavButton>
-                    </nav>
+                    <div
+                        className={`absolute top-0 h-full z-1000 w-40 overflow-hidden transition-[left] duration-200 md:relative md:shrink-0 md:w-40 md:left-0 ${navOpen ? "left-0" : "-left-40"}`}
+                    >
+                        <nav className="w-40 h-full bg-neutral-800/90 md:bg-[rgba(8,8,8,.45)] border-r border-border py-2 px-1.5 flex flex-col gap-2">
+                            <SideNavButton
+                                active={section === "about"}
+                                onClick={() => setSection("about")}
+                                icon={<img src="/about.ico" className="w-6" />}
+                            >
+                                About
+                            </SideNavButton>
+                            <SideNavButton
+                                active={section === "experience"}
+                                onClick={() => setSection("experience")}
+                                icon={<img src="/experience.ico" className="w-6" />}
+                            >
+                                Experience
+                            </SideNavButton>
+                            <SideNavButton
+                                active={section === "resume"}
+                                onClick={() => setSection("resume")}
+                                icon={<img src="/resume.ico" className="size-6" />}
+                            >
+                                Resume
+                            </SideNavButton>
+                            <SideNavButton
+                                href={data.links.github}
+                                external
+                                icon={
+                                    <div className="relative overflow-hidden rounded-full size-5 mr-1">
+                                        <img
+                                            src="/github.png"
+                                            className="size-5 object-contain brightness-125"
+                                        />
+                                        <div className="absolute inset-x-0 top-0 h-1/2 pointer-events-none bg-linear-to-b from-white/80 to-transparent" />
+                                    </div>
+                                }
+                            >
+                                GitHub
+                            </SideNavButton>
+                            <SideNavButton
+                                href={data.links.linkedin}
+                                external
+                                icon={
+                                    <div className="relative overflow-hidden rounded-sm size-5 mr-1">
+                                        <img
+                                            src="/linkedin.png"
+                                            className="size-5 object-contain"
+                                        />
+                                        <div className="absolute inset-x-0 top-0 h-1/2 pointer-events-none bg-linear-to-b from-white/80 to-transparent rounded-t-sm" />
+                                    </div>
+                                }
+                            >
+                                LinkedIn
+                            </SideNavButton>
+                            <SideNavButton
+                                active={section === "contact"}
+                                onClick={() => setSection("contact")}
+                                icon={<img src="/mail.ico" className="size-6" />}
+                            >
+                                Contact
+                            </SideNavButton>
+                        </nav>
+                    </div>
                     {/* content */}
-                    <div className={`flex-1 overflow-x-auto m-3 pr-2 min-w-80 ${section === "resume" ? "overflow-hidden" : "overflow-y-auto"}`}>
+                    <div
+                        className={`relative z-0 flex-1 overflow-x-auto m-3 pr-2 min-w-80 ${section === "resume" ? "overflow-hidden" : "overflow-y-auto"}`}
+                    >
                         {section === "about" && <About />}
                         {section === "experience" && <Experience />}
                         {section === "contact" && <Contact />}

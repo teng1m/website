@@ -16,7 +16,7 @@ export default function App() {
 
     return (
         <>
-            <div className="fixed bottom-2 right-2 z-50 px-2 py-1 glass-borders bg-neutral-800">
+            <div className="fixed bottom-2 right-2 z-50 px-2 py-1 glass-borders">
                 <p className="leading-tight text-xs">
                     Inspired by{" "}
                     <a

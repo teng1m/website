@@ -13,7 +13,6 @@ export default function App() {
     const [section, setSection] = useState<Section>("about");
     const [navOpen, setNavOpen] = useState(true);
 
-
     return (
         <>
             <div className="fixed bottom-2 right-2 z-50 px-2 py-1 glass-borders">
@@ -35,27 +34,25 @@ export default function App() {
         bg-linear-to-b from-[rgba(66,66,66,.4)] to-[rgba(22,22,22,.88)] backdrop-blur-[6px] backdrop-saturate-130 shadow-[2px_2px_12px_rgba(0,0,0,.85),inset_-1px_-1px_0_rgba(255,255,255,.08)] outline-1 outline-[rgba(28,49,39,.4)]"
             >
                 {/* title bar */}
-                <div className="[background:linear-gradient(180deg,rgba(172,172,172,.92)_0%,rgba(71,71,71,.92)_20%,rgba(19,19,19,.92)_40%,rgba(7,7,7,.95)_100%)] border-b border-border py-3 px-5 flex items-center gap-5 shrink-0">
-                    <div className="flex gap-2">
-                        <div
+                <div className="[background:linear-gradient(180deg,rgba(172,172,172,.92)_0%,rgba(71,71,71,.92)_20%,rgba(19,19,19,.92)_40%,rgba(7,7,7,.95)_100%)] border-b border-border py-3 px-5 flex items-center gap-3 shrink-0">
+                    {/* <div
                             className="orb size-4"
                             style={{
                                 background:
                                     "radial-gradient(circle at 35% 35%, white, var(--color-dot-green))",
                             }}
-                        />
-                    </div>
+                        /> */}
+                    <img src="/online.ico" className="size-5" />
                     <h1 className="text-2xl">Kienan</h1>
                     <button
                         onClick={() => setNavOpen((v) => !v)}
-                        className="md:hidden ml-auto text-white/70 hover:text-white text-sm leading-none"
+                        className="md:hidden ml-auto flex flex-row gap-2 items-center"
                     >
-                        Menu{" "}
-                        <span
-                            className={`inline-block transition-transform duration-200 ${navOpen ? "rotate-180" : "rotate-0"}`}
-                        >
-                            ▶
-                        </span>
+                        <h2 className="text-white text-lg">Menu</h2>
+                        <img
+                            src={navOpen ? "/arrowleft.ico" : "/arrowright.ico"}
+                            className="inline-block size-5"
+                        />
                     </button>
                 </div>
 
